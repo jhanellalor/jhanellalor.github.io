@@ -1,15 +1,15 @@
-$(document).ready(function () {
-	var d = new Date();
-	var	day = d.getDay();
-	var	msg = ["Sunday Fundayyyy!!",
+var	msg = ["Sunday Fundayyyy!!",
 			   "UGHHH Mondays...",
 			   "Its Tuesday. Eh",
 			   "Wow! Wednesday!",
 			   "Thrilling Thursday!",
 			   "Thank God its Friday",
-			   "Time to TURN UUUUUPPPPPPPPPP"]
+			   "Time to TURN UUUUUPPPPPPPPPP"];
+var myDate = new Date();
+var todayNumber = myDate.getDay();
+var todayElement = document.getElementById('day' + todayNumber);
+todayElement.setAttribute('id', 'today');
 
-	$('#' + day).attr('id', 'today');
-	$("#message").text(msg[day]);
-	
-});
+var messageElement = document.getElementById('message');
+messageElement.innerText = msg[todayNumber];
+
